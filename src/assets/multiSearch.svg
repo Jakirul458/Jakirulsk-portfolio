@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Magnifying Glass -->
+  <circle cx="80" cy="80" r="50" stroke="#007bff" stroke-width="10" fill="none"/>
+  <line x1="120" y1="120" x2="170" y2="170" stroke="#007bff" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Google Icon -->
+  <circle cx="50" cy="160" r="15" fill="#4285F4"/>
+  <rect x="45" y="155" width="10" height="10" fill="white"/>
+  
+  <!-- YouTube Icon -->
+  <rect x="90" y="150" width="30" height="20" rx="5" fill="red"/>
+  <polygon points="100,155 115,160 100,165" fill="white"/>
+  
+  <!-- ChatGPT Icon -->
+  <circle cx="160" cy="40" r="15" fill="#00A67E"/>
+  <text x="153" y="45" font-family="Arial" font-size="12" font-weight="bold" fill="white">GPT</text>
+  
+  <!-- Title -->
+  <text x="10" y="190" font-family="Arial" font-size="14" font-weight="bold" fill="#333">Multi-Platform Search Utility</text>
+</svg>

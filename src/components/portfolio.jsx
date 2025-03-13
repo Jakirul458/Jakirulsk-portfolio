@@ -4,6 +4,9 @@ import "./portfolio.css";
 import profile from '../assets/profile.jpg';
 // import hoby from 'src/assets/hoby.jpg';
 import hoby from '../assets/hoby.jpg';
+import gfst from '../assets/gfst.svg';
+import multiSearch from "../assets/multiSearch.svg";
+
 
 export default function Portfolio() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -42,33 +45,24 @@ export default function Portfolio() {
     const projects = [
         {
             id: 1,
-            title: "Golden Future Supportive Trust ",
-            description: " Full stack application for managing user transactions. Built with MERN stack, featuring user authentication, role-based access control, transaction tracking, and responsive dashboard.",
-            image: "/api/placeholder/600/300",
-            techStack: [" React", "Node.js", "Express", "MongoDB", "JWT", "javaScript"],
+            title: "Golden Future Supportive Trust",
+            description:
+                "Full stack application for managing user transactions. Built with MERN stack, featuring user authentication, role-based access control, transaction tracking, and responsive dashboard.",
+            image: gfst,
+            techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "JavaScript", ],
             demoLink: "https://gfst-frontend.vercel.app/login",
-            githubLink: "https://github.com/Jakirul458/gfst-frontend"
-            
+            githubLink: "https://github.com/Jakirul458/gfst-frontend",
         },
         {
             id: 2,
-          
-            title: "Multi-Platform Search Utility ",
-            description: " Tool to search Google, YouTube, and ChatGPT simultaneously. Streamlines research process by providing results from multiple platforms in a single interface with custom filtering options.",
-            image: "/api/placeholder/600/300",
-            techStack: [" React ", "Next.js ", "RESTful APIs ", "Vercel "],
+            title: "Multi-Platform Search Utility",
+            description:
+                "Tool to search Google, YouTube, and ChatGPT simultaneously. Streamlines research process by providing results from multiple platforms in a single interface with custom filtering options.",
+            image: multiSearch,
+            techStack: ["React", "JavaScript"],
             demoLink: "https://multi-platform-search-utility.vercel.app/",
-            githubLink: "https://github.com/Jakirul458/Multi-Platform-Search-Utility"
+            githubLink: "https://github.com/Jakirul458/Multi-Platform-Search-Utility",
         },
-        // {
-        //   id: 3,
-        //   title: "E-Commerce Platform",
-        //   description: "Comprehensive e-commerce solution with product management, user authentication, cart functionality, payment integration, and order tracking.",
-        //   image: "/api/placeholder/600/300",
-        //   techStack: ["React", "Node.js", "Express", "MongoDB", "Stripe", "AWS S3"],
-        //   demoLink: "#",
-        //   githubLink: "#"
-        // }
     ];
 
     // Skills data organized by category with unique skills
@@ -93,7 +87,8 @@ export default function Portfolio() {
         devTools: [
             { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
             { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-            { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+            { name: "AWS", icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+
             { name: "CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
         ],
     };
@@ -214,20 +209,7 @@ export default function Portfolio() {
                                 personal projects and professional experiences, focusing on building applications that solve
                                 real-world problems.
                             </p>
-                            {/* <div className="about-stats">
-                                <div className="stat">
-                                    <span className="stat-value">3+</span>
-                                    <span className="stat-label">Years Experience</span>
-                                </div>
-                                <div className="stat">
-                                    <span className="stat-value">10+</span>
-                                    <span className="stat-label">Projects Completed</span>
-                                </div>
-                                <div className="stat">
-                                    <span className="stat-value">5+</span>
-                                    <span className="stat-label">Happy Clients</span>
-                                </div>
-                            </div> */}
+
                             <div className="about-cta">
                                 <a href="/Resume_Jakirul_Sk.pdf" download className="btn-primary"> Resume </a>
                                 <a href="#contact" className="btn-secondary">Let's Talk</a>
@@ -356,13 +338,13 @@ export default function Portfolio() {
                         {projects.map((project) => (
                             <div className="project-card" key={project.id}>
                                 <div className="project-image">
-                                    <img src={project.image} alt={project.title} />
+                                    <img src={project.image} alt={project.title} width="200" />
                                     <div className="project-links">
                                         <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <i className="fas fa-external-link-alt"></i> Live Demo 
+                                            <i className="fas fa-external-link-alt"></i> Live Demo
                                         </a>
                                         <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <i className="fab fa-github"></i> Source Code 
+                                            <i className="fab fa-github"></i> Source Code
                                         </a>
                                     </div>
                                 </div>
@@ -385,83 +367,82 @@ export default function Portfolio() {
                     </div>
                 </div>
             </section>
-
             {/* Contact Section */}
             <section id="contact" className="section contact-section">
-            <div className="container">
-                <div className="section-header">
-                    <h2>Get In Touch</h2>
-                    <div className="section-divider"></div>
-                </div>
-                <div className="contact-content">
-                    <div className="contact-info">
-                        <div className="contact-card">
-                            <div className="contact-icon">
-                                <i className="fas fa-envelope"></i>
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Get In Touch</h2>
+                        <div className="section-divider"></div>
+                    </div>
+                    <div className="contact-content">
+                        <div className="contact-info">
+                            <div className="contact-card">
+                                <div className="contact-icon">
+                                    <i className="fas fa-envelope"></i>
+                                </div>
+                                <div className="contact-details">
+                                    <h3>Email</h3>
+                                    <p>uniuqe369alan@gmail.com</p>
+                                </div>
                             </div>
-                            <div className="contact-details">
-                                <h3>Email</h3>
-                                <p>uniuqe369alan@gmail.com</p>
+                            <div className="contact-card">
+                                <div className="contact-icon">
+                                    <i className="fas fa-phone-alt"></i>
+                                </div>
+                                <div className="contact-details">
+                                    <h3>Phone</h3>
+                                    <p>+91 6294527072</p>
+                                </div>
+                            </div>
+                            <div className="contact-card">
+                                <div className="contact-icon">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div className="contact-details">
+                                    <h3>Location</h3>
+                                    <p>West Bengal, India</p>
+                                </div>
+                            </div>
+                            <div className="contact-social">
+                                <h3>Connect With Me</h3>
+                                <div className="social-icons">
+                                    <a href="https://linkedin.com/in/jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                        <i className="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://github.com/Jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                        <i className="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://leetcode.com/u/Jakirul_Sk/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                        <i className="fas fa-code"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div className="contact-card">
-                            <div className="contact-icon">
-                                <i className="fas fa-phone-alt"></i>
-                            </div>
-                            <div className="contact-details">
-                                <h3>Phone</h3>
-                                <p>+91 6294527072</p>
-                            </div>
-                        </div>
-                        <div className="contact-card">
-                            <div className="contact-icon">
-                                <i className="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div className="contact-details">
-                                <h3>Location</h3>
-                                <p>West Bengal, India</p>
-                            </div>
-                        </div>
-                        <div className="contact-social">
-                            <h3>Connect With Me</h3>
-                            <div className="social-icons">
-                                <a href="https://linkedin.com/in/jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                    <i className="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/Jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                    <i className="fab fa-github"></i>
-                                </a>
-                                <a href="https://leetcode.com/u/Jakirul_Sk/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                    <i className="fas fa-code"></i>
-                                </a>
-                            </div>
+                        <div className="contact-form">
+                            <h3>Send Me a Message</h3>
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="fcf78b2e-9430-421d-adfd-87cc9d23647b" />
+                                <div className="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required style={{ backgroundColor: 'white' }} />
+                                </div>
+                                <div className="form-group">
+                                    <input type="email" name="email" placeholder="Your Email" required style={{ backgroundColor: 'white' }} />
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" name="subject" placeholder="Subject" required style={{ backgroundColor: 'white' }} />
+                                </div>
+                                <div className="form-group">
+                                    <textarea name="message" placeholder="Your Message" rows="5" required style={{ backgroundColor: 'white' }}></textarea>
+                                </div>
+                                <div className="form-group">
+                                    <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." required style={{ backgroundColor: 'white' }} />
+                                </div>
+                                <button type="submit" className="btn-primary">Send Message</button>
+                            </form>
                         </div>
                     </div>
-                    <div className="contact-form">
-                        <h3>Send Me a Message</h3>
-                        <form action="https://api.web3forms.com/submit" method="POST">
-                            <input type="hidden" name="access_key" value="fcf78b2e-9430-421d-adfd-87cc9d23647b" />
-                            <div className="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required style={{ backgroundColor: 'white' }} />
-                            </div>
-                            <div className="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required style={{ backgroundColor: 'white' }} />
-                            </div>
-                            <div className="form-group">
-                                <input type="text" name="subject" placeholder="Subject" required style={{ backgroundColor: 'white' }} />
-                            </div>
-                            <div className="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required style={{ backgroundColor: 'white' }}></textarea>
-                            </div>
-                            <div className="form-group">
-                                <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." required style={{ backgroundColor: 'white' }} />
-                            </div>
-                            <button type="submit" className="btn-primary">Send Message</button>
-                        </form>
-                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
             {/* Footer */}
             <footer className="footer">
