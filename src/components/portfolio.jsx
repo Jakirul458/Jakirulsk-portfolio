@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./portfolio.css";
 // import profile from "src/assets/profile.jpg";
-import profile from 'src/assets/profile.jpg';
-import hoby from 'src/assets/hoby.jpg';
+import profile from '../assets/profile.jpg';
+// import hoby from 'src/assets/hoby.jpg';
+import hoby from '../assets/hoby.jpg';
 
 export default function Portfolio() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -41,19 +42,21 @@ export default function Portfolio() {
     const projects = [
         {
             id: 1,
-            title: "Golden Future Supportive Trust",
-            description: "Full stack application for managing user transactions. Built with MERN stack, featuring user authentication, role-based access control, transaction tracking, and responsive dashboard.",
+            title: "Golden Future Supportive Trust ",
+            description: " Full stack application for managing user transactions. Built with MERN stack, featuring user authentication, role-based access control, transaction tracking, and responsive dashboard.",
             image: "/api/placeholder/600/300",
-            techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "javaScript"],
+            techStack: [" React", "Node.js", "Express", "MongoDB", "JWT", "javaScript"],
             demoLink: "https://gfst-frontend.vercel.app/login",
             githubLink: "https://github.com/Jakirul458/gfst-frontend"
+            
         },
         {
             id: 2,
-            title: "Multi-Platform Search Utility",
-            description: "Tool to search Google, YouTube, and ChatGPT simultaneously. Streamlines research process by providing results from multiple platforms in a single interface with custom filtering options.",
+          
+            title: "Multi-Platform Search Utility ",
+            description: " Tool to search Google, YouTube, and ChatGPT simultaneously. Streamlines research process by providing results from multiple platforms in a single interface with custom filtering options.",
             image: "/api/placeholder/600/300",
-            techStack: ["React", "Next.js", "RESTful APIs", "Tailwind CSS", "Vercel"],
+            techStack: [" React ", "Next.js ", "RESTful APIs ", "Vercel "],
             demoLink: "https://multi-platform-search-utility.vercel.app/",
             githubLink: "https://github.com/Jakirul458/Multi-Platform-Search-Utility"
         },
@@ -95,7 +98,7 @@ export default function Portfolio() {
         ],
     };
 
-   
+
 
 
 
@@ -155,7 +158,8 @@ export default function Portfolio() {
                             </div>
                         </div>
                         <div className="hero-image">
-                            <img src="public/profile.jpg" alt="Jakirul Sk" className="profile-image" />
+                            <img src={profile} alt="Jakirul Sk" className="profile-image" />
+                            {/* <img src={profile} alt="Jakirul Sk" /> */}
                         </div>
                     </div>
                     <div className="social-links">
@@ -191,10 +195,12 @@ export default function Portfolio() {
                     </div>
                     <div className="about-content">
                         <div className="about-image">
-                            <div className="image-frame">
-                                <img src="public/hoby.jpg" alt="Jakirul Sk" />
-                            </div>
+                            {/* <div className="image-frame">
+                                <img src="/hoby.jpg" alt="Jakirul Sk" />
+                            </div> */}
+                            <img src={hoby} alt="Jakirul Sk" />
                         </div>
+
                         <div className="about-text">
                             <h3>Web Developer & Problem Solver</h3>
                             <p>
@@ -208,7 +214,7 @@ export default function Portfolio() {
                                 personal projects and professional experiences, focusing on building applications that solve
                                 real-world problems.
                             </p>
-                            <div className="about-stats">
+                            {/* <div className="about-stats">
                                 <div className="stat">
                                     <span className="stat-value">3+</span>
                                     <span className="stat-label">Years Experience</span>
@@ -221,9 +227,9 @@ export default function Portfolio() {
                                     <span className="stat-value">5+</span>
                                     <span className="stat-label">Happy Clients</span>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="about-cta">
-                                <a href="/Enhanced_Resume_Jakirul_Sk.pdf" download className="btn-primary">Download CV</a>
+                                <a href="/Resume_Jakirul_Sk.pdf" download className="btn-primary"> Resume </a>
                                 <a href="#contact" className="btn-secondary">Let's Talk</a>
                             </div>
                         </div>
@@ -242,16 +248,16 @@ export default function Portfolio() {
                         <div className="timeline-item">
                             <div className="timeline-dot"></div>
                             <div className="timeline-content">
-                                <div className="timeline-date">2018 - 2022</div>
-                                <h3>Bachelor of Technology in Computer Science</h3>
-                                <h4>University Institute of Technology</h4>
+                                <div className="timeline-date">2022 - 2025</div>
+                                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                                <h4>Maulana Abul Kalam Azad University of Technology</h4>
                                 <p>
                                     Graduated with honors, focusing on algorithms, data structures, and web development.
                                     Key courses included Database Management Systems, Object-Oriented Programming, and Software Engineering.
                                 </p>
                             </div>
                         </div>
-                        <div className="timeline-item">
+                        {/* <div className="timeline-item">
                             <div className="timeline-dot"></div>
                             <div className="timeline-content">
                                 <div className="timeline-date">2016 - 2018</div>
@@ -263,7 +269,8 @@ export default function Portfolio() {
                                 </p>
 
                             </div>
-                        </div>
+                        </div> */}
+
                         {/* <div className="timeline-item">
                             <div className="timeline-dot"></div>
                             <div className="timeline-content">
@@ -352,10 +359,10 @@ export default function Portfolio() {
                                     <img src={project.image} alt={project.title} />
                                     <div className="project-links">
                                         <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <i className="fas fa-external-link-alt"></i> Live Demo
+                                            <i className="fas fa-external-link-alt"></i> Live Demo 
                                         </a>
                                         <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <i className="fab fa-github"></i> Source Code
+                                            <i className="fab fa-github"></i> Source Code 
                                         </a>
                                     </div>
                                 </div>
@@ -394,7 +401,7 @@ export default function Portfolio() {
                                 </div>
                                 <div className="contact-details">
                                     <h3>Email</h3>
-                                    <p>rimon458jacky@gmail.com</p>
+                                    <p>uniuqe369alan@gmail.com</p>
                                 </div>
                             </div>
                             <div className="contact-card">
