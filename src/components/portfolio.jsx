@@ -104,6 +104,12 @@ export default function Portfolio() {
                         <div className="logo">
                             <a href="#home">JS</a>
                         </div>
+                        {/* <div className="logo">
+                            <a href="#home">
+                                <img src="src/assets/profile.jpg" alt="Logo" className="logo-img" />
+                            </a>
+                        </div> */}
+
 
                         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                             <div className={`hamburger ${menuOpen ? 'active' : ''}`}>
@@ -182,7 +188,7 @@ export default function Portfolio() {
                     <div className="about-content">
                         <div className="about-image">
                             <div className="image-frame">
-                                <img src="/api/placeholder/400/500" alt="Jakirul Sk" />
+                                <img src="src/assets/profile.jpg" alt="Jakirul Sk" />
                             </div>
                         </div>
                         <div className="about-text">
@@ -251,6 +257,7 @@ export default function Portfolio() {
                                     Completed with distinction in Mathematics, Physics, and Computer Science.
                                     Participated in regional science competitions and programming challenges.
                                 </p>
+
                             </div>
                         </div>
                         <div className="timeline-item">

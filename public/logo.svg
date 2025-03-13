@@ -1,0 +1,19 @@
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#gradient)" rx="10"/>
+  
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4A90E2; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1C3FAA; stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Code Brackets -->
+  <text x="20" y="55" font-family="Arial" font-size="40" font-weight="bold" fill="white">{</text>
+  <text x="260" y="55" font-family="Arial" font-size="40" font-weight="bold" fill="white">}</text>
+  
+  <!-- Name -->
+  <text x="50%" y="60" font-family="Arial" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Jakirul Sk</text>
+</svg>
