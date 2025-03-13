@@ -10,7 +10,7 @@ export default function Portfolio() {
     const [activeSection, setActiveSection] = useState("home");
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const linkUrl = "https://gfst-frontend.vercel.app/login";
+    const linkUrl = "https://github.com/Jakirul458";
 
     // Handle scroll event for navbar styling and active section detection
     useEffect(() => {
@@ -388,76 +388,80 @@ export default function Portfolio() {
 
             {/* Contact Section */}
             <section id="contact" className="section contact-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Get In Touch</h2>
-                        <div className="section-divider"></div>
+            <div className="container">
+                <div className="section-header">
+                    <h2>Get In Touch</h2>
+                    <div className="section-divider"></div>
+                </div>
+                <div className="contact-content">
+                    <div className="contact-info">
+                        <div className="contact-card">
+                            <div className="contact-icon">
+                                <i className="fas fa-envelope"></i>
+                            </div>
+                            <div className="contact-details">
+                                <h3>Email</h3>
+                                <p>uniuqe369alan@gmail.com</p>
+                            </div>
+                        </div>
+                        <div className="contact-card">
+                            <div className="contact-icon">
+                                <i className="fas fa-phone-alt"></i>
+                            </div>
+                            <div className="contact-details">
+                                <h3>Phone</h3>
+                                <p>+91 6294527072</p>
+                            </div>
+                        </div>
+                        <div className="contact-card">
+                            <div className="contact-icon">
+                                <i className="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div className="contact-details">
+                                <h3>Location</h3>
+                                <p>West Bengal, India</p>
+                            </div>
+                        </div>
+                        <div className="contact-social">
+                            <h3>Connect With Me</h3>
+                            <div className="social-icons">
+                                <a href="https://linkedin.com/in/jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                    <i className="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/Jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                    <i className="fab fa-github"></i>
+                                </a>
+                                <a href="https://leetcode.com/u/Jakirul_Sk/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                    <i className="fas fa-code"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div className="contact-content">
-                        <div className="contact-info">
-                            <div className="contact-card">
-                                <div className="contact-icon">
-                                    <i className="fas fa-envelope"></i>
-                                </div>
-                                <div className="contact-details">
-                                    <h3>Email</h3>
-                                    <p>uniuqe369alan@gmail.com</p>
-                                </div>
+                    <div className="contact-form">
+                        <h3>Send Me a Message</h3>
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="fcf78b2e-9430-421d-adfd-87cc9d23647b" />
+                            <div className="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required style={{ backgroundColor: 'white' }} />
                             </div>
-                            <div className="contact-card">
-                                <div className="contact-icon">
-                                    <i className="fas fa-phone-alt"></i>
-                                </div>
-                                <div className="contact-details">
-                                    <h3>Phone</h3>
-                                    <p>+91 6294527072</p>
-                                </div>
+                            <div className="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required style={{ backgroundColor: 'white' }} />
                             </div>
-                            <div className="contact-card">
-                                <div className="contact-icon">
-                                    <i className="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div className="contact-details">
-                                    <h3>Location</h3>
-                                    <p>West Bengal, India</p>
-                                </div>
+                            <div className="form-group">
+                                <input type="text" name="subject" placeholder="Subject" required style={{ backgroundColor: 'white' }} />
                             </div>
-                            <div className="contact-social">
-                                <h3>Connect With Me</h3>
-                                <div className="social-icons">
-                                    <a href="https://linkedin.com/in/jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                        <i className="fab fa-linkedin"></i>
-                                    </a>
-                                    <a href="https://github.com/Jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                        <i className="fab fa-github"></i>
-                                    </a>
-                                    <a href="https://leetcode.com/u/Jakirul_Sk/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                        <i className="fas fa-code"></i>
-                                    </a>
-                                </div>
+                            <div className="form-group">
+                                <textarea name="message" placeholder="Your Message" rows="5" required style={{ backgroundColor: 'white' }}></textarea>
                             </div>
-                        </div>
-                        <div className="contact-form">
-                            <h3>Send Me a Message</h3>
-                            <form id="contactForm">
-                                <div className="form-group">
-                                    <input type="text" id="name" placeholder="Your Name" required />
-                                </div>
-                                <div className="form-group">
-                                    <input type="email" id="email" placeholder="Your Email" required />
-                                </div>
-                                <div className="form-group">
-                                    <input type="text" id="subject" placeholder="Subject" required />
-                                </div>
-                                <div className="form-group">
-                                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" className="btn-primary">Send Message</button>
-                            </form>
-                        </div>
+                            <div className="form-group">
+                                <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." required style={{ backgroundColor: 'white' }} />
+                            </div>
+                            <button type="submit" className="btn-primary">Send Message</button>
+                        </form>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
             {/* Footer */}
             <footer className="footer">
@@ -468,13 +472,13 @@ export default function Portfolio() {
                             <p>Full Stack Developer</p>
                         </div>
                         <div className="footer-links">
-                            <a href="#home">Home</a>
-                            <a href="#about">About</a>
-                            <a href="#skills">Skills</a>
-                            <a href="#projects">Projects</a>
-                            <a href="#contact">Contact</a>
+                            <a href="#home">Home </a>
+                            <a href="#about">About </a>
+                            <a href="#skills">Skills </a>
+                            <a href="#projects">Projects </a>
+                            <a href="#contact">Contact </a>
                         </div>
-                        <div className="footer-social">
+                        {/* <div className="footer-social">
                             <a href="https://linkedin.com/in/jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
                                 <i className="fab fa-linkedin"></i>
                             </a>
@@ -484,7 +488,7 @@ export default function Portfolio() {
                             <a href="https://leetcode.com/u/Jakirul_Sk/" target="_blank" rel="noopener noreferrer" className="social-icon">
                                 <i className="fas fa-code"></i>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="footer-bottom">
                         <p>&copy; {new Date().getFullYear()} Jakirul Sk. All rights reserved.</p>
