@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./portfolio.css";
 // import profile from "src/assets/profile.jpg";
-import profile from '../assets/profile.jpg';
-import hoby from '../assets/hoby.jpg';
+import profile from 'src/assets/profile.jpg';
+import hoby from 'src/assets/hoby.jpg';
 
 export default function Portfolio() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -155,7 +155,7 @@ export default function Portfolio() {
                             </div>
                         </div>
                         <div className="hero-image">
-                            <img src="src/assets/profile.jpg" alt="Jakirul Sk" className="profile-image" />
+                            <img src="public/profile.jpg" alt="Jakirul Sk" className="profile-image" />
                         </div>
                     </div>
                     <div className="social-links">
@@ -192,7 +192,7 @@ export default function Portfolio() {
                     <div className="about-content">
                         <div className="about-image">
                             <div className="image-frame">
-                                <img src="src/assets/hoby.jpg" alt="Jakirul Sk" />
+                                <img src="public/hoby.jpg" alt="Jakirul Sk" />
                             </div>
                         </div>
                         <div className="about-text">
