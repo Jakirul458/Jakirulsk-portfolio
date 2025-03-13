@@ -76,6 +76,21 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--gray-900);
 }
 
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr; /* One column layout */
+  place-items: center; /* Center everything */
+  gap: 15px;
+}
+
+
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+
 a {
   text-decoration: none;
   color: var(--primary-color);

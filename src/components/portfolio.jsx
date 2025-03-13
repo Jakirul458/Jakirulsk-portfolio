@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./portfolio.css";
+// import profile from "src/assets/profile.jpg";
+import profile from '../assets/profile.jpg';
+import hoby from '../assets/hoby.jpg';
 
 export default function Portfolio() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -68,32 +71,33 @@ export default function Portfolio() {
     // Skills data organized by category with unique skills
     const skills = {
         frontend: [
-            { name: "HTML5", icon: "/api/placeholder/60/60" },
-            { name: "CSS3", icon: "/api/placeholder/60/60" },
-            { name: "JavaScript", icon: "/api/placeholder/60/60" },
-            { name: "React.js", icon: "/api/placeholder/60/60" },
-            { name: "Next.js", icon: "/api/placeholder/60/60" },
-
+            { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+            { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+            { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+            { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         ],
         backend: [
-            { name: "Node.js", icon: "/api/placeholder/60/60" },
-            { name: "Express.js", icon: "/api/placeholder/60/60" },
-            { name: "JavaScript", icon: "/api/placeholder/60/60" },
-            { name: "Java", icon: "/api/placeholder/60/60" },
-            { name: "Spring Boot", icon: "/api/placeholder/60/60" },
+            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+            { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+            { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+            { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+            { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
         ],
         database: [
-            { name: "MongoDB", icon: "/api/placeholder/60/60" },
-            { name: "MySQL", icon: "/api/placeholder/60/60" },
-
+            { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+            { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
         ],
         devTools: [
-            { name: "Git", icon: "/api/placeholder/60/60" },
-            { name: "Docker", icon: "/api/placeholder/60/60" },
-            { name: "AWS", icon: "/api/placeholder/60/60" },
-            { name: "CI/CD", icon: "/api/placeholder/60/60" },
+            { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+            { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+            { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+            { name: "CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
         ],
     };
+
+   
+
+
 
     return (
         <div className="portfolio-container">
@@ -151,7 +155,7 @@ export default function Portfolio() {
                             </div>
                         </div>
                         <div className="hero-image">
-                            <img src="/api/placeholder/400/400" alt="Jakirul Sk" className="profile-image" />
+                            <img src="src/assets/profile.jpg" alt="Jakirul Sk" className="profile-image" />
                         </div>
                     </div>
                     <div className="social-links">
@@ -188,7 +192,7 @@ export default function Portfolio() {
                     <div className="about-content">
                         <div className="about-image">
                             <div className="image-frame">
-                                <img src="src/assets/profile.jpg" alt="Jakirul Sk" />
+                                <img src="src/assets/hoby.jpg" alt="Jakirul Sk" />
                             </div>
                         </div>
                         <div className="about-text">
@@ -260,7 +264,7 @@ export default function Portfolio() {
 
                             </div>
                         </div>
-                        <div className="timeline-item">
+                        {/* <div className="timeline-item">
                             <div className="timeline-dot"></div>
                             <div className="timeline-content">
                                 <div className="timeline-date">2023</div>
@@ -271,7 +275,7 @@ export default function Portfolio() {
                                     Express, and MongoDB. Completed multiple projects with real-world applications.
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
@@ -287,53 +291,47 @@ export default function Portfolio() {
                         <div className="skills-category">
                             <h3>Frontend Development</h3>
                             <div className="skills-grid">
-                                {skills.frontend.map((skill, index) => (
-                                    <div className="skill-card" key={`frontend-${index}`}>
-                                        <div className="skill-icon">
-                                            <img src={skill.icon} alt={skill.name} />
-                                        </div>
-                                        <div className="skill-name">{skill.name}</div>
-                                    </div>
-                                ))}
+                                <div className="skills-container">
+                                    {skills.frontend.map((skill) => (
+                                        <img key={skill.name} src={skill.icon} alt={skill.name} className="skill-icon" />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                         <div className="skills-category">
                             <h3>Backend Development</h3>
                             <div className="skills-grid">
-                                {skills.backend.map((skill, index) => (
-                                    <div className="skill-card" key={`backend-${index}`}>
-                                        <div className="skill-icon">
-                                            <img src={skill.icon} alt={skill.name} />
-                                        </div>
-                                        <div className="skill-name">{skill.name}</div>
+                                <div className="skills-grid">
+                                    <div className="skills-container">
+                                        {skills.backend.map((skill) => (
+                                            <img key={skill.name} src={skill.icon} alt={skill.name} className="skill-icon" />
+                                        ))}
                                     </div>
-                                ))}
+                                </div>
                             </div>
                         </div>
                         <div className="skills-category">
                             <h3>Database & Storage</h3>
                             <div className="skills-grid">
-                                {skills.database.map((skill, index) => (
-                                    <div className="skill-card" key={`database-${index}`}>
-                                        <div className="skill-icon">
-                                            <img src={skill.icon} alt={skill.name} />
-                                        </div>
-                                        <div className="skill-name">{skill.name}</div>
+                                <div className="skills-grid">
+                                    <div className="skills-container">
+                                        {skills.database.map((skill) => (
+                                            <img key={skill.name} src={skill.icon} alt={skill.name} className="skill-icon" />
+                                        ))}
                                     </div>
-                                ))}
+                                </div>
                             </div>
                         </div>
                         <div className="skills-category">
                             <h3>DevOps & Tools</h3>
                             <div className="skills-grid">
-                                {skills.devTools.map((skill, index) => (
-                                    <div className="skill-card" key={`devtools-${index}`}>
-                                        <div className="skill-icon">
-                                            <img src={skill.icon} alt={skill.name} />
-                                        </div>
-                                        <div className="skill-name">{skill.name}</div>
+                                <div className="skills-grid">
+                                    <div className="skills-container">
+                                        {skills.devTools.map((skill) => (
+                                            <img key={skill.name} src={skill.icon} alt={skill.name} className="skill-icon" />
+                                        ))}
                                     </div>
-                                ))}
+                                </div>
                             </div>
                         </div>
                     </div>
