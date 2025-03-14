@@ -88,8 +88,8 @@ export default function Portfolio() {
             { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
             { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
             { name: "AWS", icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-
             { name: "CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
+            { name: "Postman API", icon: "https://www.svgrepo.com/show/354202/postman-icon.svg" }
         ],
     };
 
@@ -438,7 +438,7 @@ export default function Portfolio() {
                                     <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." />
                                 </div>
                                 <div>
-                                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+                                    
                                 </div>
                                 <button type="submit" className="btn-primary">Send Message</button>
                             </form>

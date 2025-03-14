@@ -341,7 +341,7 @@ button, .btn-primary, .btn-secondary {
     position: fixed;
     top: 0;
     right: -300px;
-    width: 280px;
+    width: 180px;
     height: 100vh;
     background-color: var(--light-color);
     box-shadow: var(--shadow-lg);
