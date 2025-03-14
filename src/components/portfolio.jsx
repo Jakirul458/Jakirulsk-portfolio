@@ -49,8 +49,8 @@ export default function Portfolio() {
             description:
                 "Full stack application for managing user transactions. Built with MERN stack, featuring user authentication, role-based access control, transaction tracking, and responsive dashboard.",
             image: gfst,
-            techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "JavaScript", ],
-            demoLink: "https://gfst-frontend.vercel.app/login",
+            techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "JavaScript",],
+            demoLink: "https://gfst.vercel.app/login",
             githubLink: "https://github.com/Jakirul458/gfst-frontend",
         },
         {
@@ -382,7 +382,7 @@ export default function Portfolio() {
                                 </div>
                                 <div className="contact-details">
                                     <h3>Email</h3>
-                                    <p>uniuqe369alan@gmail.com</p>
+                                    <p>jakirulsk312@gmail.com</p>
                                 </div>
                             </div>
                             <div className="contact-card">
@@ -421,25 +421,29 @@ export default function Portfolio() {
                         <div className="contact-form">
                             <h3>Send Me a Message</h3>
                             <form action="https://api.web3forms.com/submit" method="POST">
-                                <input type="hidden" name="access_key" value="fcf78b2e-9430-421d-adfd-87cc9d23647b" />
+                                <input type="hidden" name="access_key" value="e960a4c6-cee5-42d6-95f7-1d7ad29cb908" />
                                 <div className="form-group">
-                                    <input type="text" name="name" placeholder="Your Name" required style={{ backgroundColor: 'white' }} />
+                                    <input type="text" name="name" placeholder="Your Name" />
                                 </div>
                                 <div className="form-group">
-                                    <input type="email" name="email" placeholder="Your Email" required style={{ backgroundColor: 'white' }} />
+                                    <input type="email" name="email" placeholder="Your Email" />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" name="subject" placeholder="Subject" required style={{ backgroundColor: 'white' }} />
+                                    <input type="text" name="subject" placeholder="Subject" />
                                 </div>
                                 <div className="form-group">
-                                    <textarea name="message" placeholder="Your Message" rows="5" required style={{ backgroundColor: 'white' }}></textarea>
+                                    <textarea name="message" placeholder="Your Message" rows="5"></textarea>
                                 </div>
                                 <div className="form-group">
-                                    <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." required style={{ backgroundColor: 'white' }} />
+                                    <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." />
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
                                 </div>
                                 <button type="submit" className="btn-primary">Send Message</button>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </section>
