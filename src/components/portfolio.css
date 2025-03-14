@@ -1,6 +1,4 @@
-/* portfolio.css */
 
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 /* Font Awesome */
@@ -206,13 +204,21 @@ button, .btn-primary, .btn-secondary {
 .navbar-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;  
+ }
+
+
+
+
+.logo {
   align-items: center;
 }
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.logo-img {
+  width: 70px;  
+  height: 70px; 
+  object-fit: scale-down;
+  border-radius: 100%; 
+  cursor: pointer;
 }
 
 .profile-svg {
@@ -341,13 +347,13 @@ button, .btn-primary, .btn-secondary {
     position: fixed;
     top: 0;
     right: -300px;
-    width: 180px;
-    height: 100vh;
+    width: 130px;
+    height: 55vh;
     background-color: var(--light-color);
     box-shadow: var(--shadow-lg);
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
     transition: var(--transition-medium);
     z-index: 1000;
   }
@@ -357,14 +363,14 @@ button, .btn-primary, .btn-secondary {
   }
   
   .nav-links li {
-    margin: 1.5rem 0;
+    margin: 0.3rem;
     width: 100%;
     text-align: center;
   }
   
   .nav-links a {
     display: block;
-    padding: 0.5rem;
+    padding: 0.4rem;
     font-size: 1.1rem;
   }
   
@@ -378,36 +384,12 @@ button, .btn-primary, .btn-secondary {
   }
 } 
 
-/* @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-image {
-    max-width: 80%;
-    margin-top: 20px;
-  }
-
-  .nav-links {
-    right: -100%;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-} */
-
 
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 60vh;
-  min-height: 700px;
+  height: 50vh;
+  min-height: 800px;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, var(--gray-100) 0%, var(--light-color) 100%);
@@ -427,7 +409,7 @@ button, .btn-primary, .btn-secondary {
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
@@ -721,11 +703,12 @@ button, .btn-primary, .btn-secondary {
   gap: 30px;
   align-items: center;
 }
-
 .contact-info {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center; /* Centers the cards in the row */
+  align-items: center; /* Aligns items vertically */
+  gap: 20px; /* Adjust spacing between cards */
+  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
 }
 
 .contact-card {
@@ -736,7 +719,26 @@ button, .btn-primary, .btn-secondary {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Change icon color on hover */
+.contact-card:hover .contact-icon i {
+  color: #007bff;
+}
+
+/* Optional: Smooth transition for icon */
+.contact-icon i {
+  transition: color 0.3s ease;
+}
+
+
 
 .contact-icon {
   font-size: 24px;
@@ -985,7 +987,7 @@ button, .btn-primary, .btn-secondary {
   bottom: 15px; /* Move links slightly lower */
   left: 20px;
   display: flex;
-  gap: 260px;
+  gap: 220px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1050,3 +1052,136 @@ button, .btn-primary, .btn-secondary {
   transform: translateX(5px);
 }
 
+
+/* Hobby Section */.hobby-section {
+  padding: 60px 0;
+  background: #f9f9f9;
+}
+
+/* Hobby Content */
+.hobby-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Slider Container */
+.hobby-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hobby Text */
+.hobby-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.hobby-text h3 {
+  font-size: 2rem;
+  color: #222;
+}
+
+.hobby-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Call to Action Button */
+.hobby-cta {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Slick Slider Customization */
+.slick-prev, .slick-next {
+  z-index: 10;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  color: #0056b3;
+}
+
+/* Dots (Pagination) */
+.slick-dots {
+  bottom: 10px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #007bff;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hobby-content {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .hobby-text {
+      max-width: 90%;
+      padding: 0 20px;
+  }
+
+ 
+}
+
+@media (max-width: 768px) {
+  .hobby-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hobby-text h3 {
+      font-size: 1.8rem;
+  }
+
+  .hobby-text p {
+      font-size: 0.95rem;
+  }
+
+  .btn-primary {
+      font-size: 14px;
+      padding: 10px 20px;
+  }
+  
+ 
+}
