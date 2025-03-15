@@ -1,10 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* Font Awesome */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-/* CSS Reset & Base Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +11,7 @@
 }
 
 :root {
-  /* Color variables */
+
   --primary-color: #2563eb;
   --primary-dark: #1d4ed8;
   --primary-light: #3b82f6;
@@ -31,16 +30,16 @@
   --warning-color: #f59e0b;
   --info-color: #3b82f6;
   
-  /* Typography */
+  
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Poppins', sans-serif;
   
-  /* Transitions */
+
   --transition-fast: 0.3s ease;
   --transition-medium: 0.5s ease;
   --transition-slow: 0.8s ease;
   
-  /* Shadows */
+
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -74,8 +73,8 @@ h1, h2, h4, h5, h6 {
   color: var(--gray-900);
 }
 h3 {
-  font-size: 2rem; /* Increase size */
-  padding: 10px 0; /* Add padding (top & bottom) */
+  font-size: 2rem;
+  padding: 10px 0; 
 }
 
 
@@ -83,10 +82,10 @@ h3 {
 
 .skills-container {
   display: flex;  
-  justify-content: center; /* Center icons horizontally */
-  align-items: center; /* Align icons vertically */
-  gap: 15px; /* Space between icons */
-  flex-wrap: wrap; /* Ensure responsiveness */
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  flex-wrap: wrap; 
 }
 
 .skill-icon {
@@ -97,7 +96,7 @@ h3 {
 
 .skills-grid {
   
-  align-items: center; /* Align items vertically */
+  align-items: center; 
   gap: 10px; /* Space between icon and text */
 }
 
@@ -229,14 +228,16 @@ button, .btn-primary, .btn-secondary {
   font-family: var(--heading-font);
   font-size: 2rem;
   font-weight: 800;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Fallback */
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
+  background-clip: text; /* Standard */
+  -webkit-background-clip: text; /* WebKit */
   -webkit-text-fill-color: transparent;
   padding: 0.5rem;
   border: 3px solid var(--primary-color);
   border-radius: var(--border-radius-md);
 }
+
 
 .nav-links {
   display: flex;
@@ -705,10 +706,10 @@ button, .btn-primary, .btn-secondary {
 }
 .contact-info {
   display: flex;
-  justify-content: center; /* Centers the cards in the row */
-  align-items: center; /* Aligns items vertically */
-  gap: 20px; /* Adjust spacing between cards */
-  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px; 
+  flex-wrap: wrap; 
 }
 
 .contact-card {
@@ -728,12 +729,12 @@ button, .btn-primary, .btn-secondary {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Optional: Change icon color on hover */
+
 .contact-card:hover .contact-icon i {
   color: #007bff;
 }
 
-/* Optional: Smooth transition for icon */
+
 .contact-icon i {
   transition: color 0.3s ease;
 }
@@ -758,6 +759,7 @@ button, .btn-primary, .btn-secondary {
 /* Social Icons */
 .contact-social {
   margin-top: 20px;
+  
 }
 
 .social-icons {
@@ -803,7 +805,15 @@ button, .btn-primary, .btn-secondary {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: white; 
+  color: black; 
 }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #555; 
+}
+
 
 .btn-primary {
   background-color: #007bff;
@@ -899,14 +909,6 @@ button, .btn-primary, .btn-secondary {
   opacity: 0.7;
 }
 
-
-
-
-
-
-
-
-
 /* =========== Projects Section =========== */
 .projects-section {
   padding: 80px 0;
@@ -957,13 +959,13 @@ button, .btn-primary, .btn-secondary {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Increased padding for better spacing */
+  padding: 20px; 
 }
 
 .project-image img {
-  width: 100px; /* Increased image size */
+  width: 100px; 
   height: 100px;
-  object-fit: contain; /* Ensure full visibility */
+  object-fit: contain; 
   display: block;
   border-radius: 8px;
 }
@@ -984,8 +986,7 @@ button, .btn-primary, .btn-secondary {
 
 .project-links {
   position: absolute;
-  bottom: 15px; /* Move links slightly lower */
-  left: 20px;
+  bottom: 15px; 
   display: flex;
   gap: 220px;
   opacity: 0;

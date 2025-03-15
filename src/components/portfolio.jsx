@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./portfolio.css";
 import profile from '../assets/profile.jpg';
-import profileImg from "../assets/profile.jpg";                                                                     
+import profileImg from "../assets/profile.jpg";
 import about from '../assets/about.jpg';
 import gfst from '../assets/gfst.svg';
 import multiSearch from "../assets/multiSearch.svg";
@@ -34,11 +34,11 @@ export default function Portfolio() {
     // Handle scroll event for navbar styling and active section detection
     useEffect(() => {
         const handleScroll = () => {
-            // Update navbar styling on scroll
+          
             setIsScrolled(window.scrollY > 50);
 
             // Determine active section based on scroll position
-            const sections = ["home", "about", "education", "skills", "projects", "contact"];
+            const sections = ["home", "about", "education", "skills", "projects", "hobby", "contact"];
             for (const section of sections.reverse()) {
                 const element = document.getElementById(section);
                 if (element && window.scrollY >= element.offsetTop - 200) {
@@ -52,14 +52,49 @@ export default function Portfolio() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Close menu when clicking on a nav link
+
     const handleNavClick = () => {
         setMenuOpen(false);
     };
 
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        drive_link: ""
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Create a FormData object to send the data to Web3Forms
+        const form = new FormData(e.target);
+
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: form,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    alert("Message sent successfully!");
+                    setFormData({ name: "", email: "", subject: "", message: "", drive_link: "" });
+                } else {
+                    alert("Failed to send message. Please try again.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    };
 
 
-  
+
     const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15];
 
 
@@ -69,13 +104,13 @@ export default function Portfolio() {
             &#10094;
         </button>
     );
-    
+
     const CustomNextArrow = ({ onClick }) => (
         <button className="custom-next" onClick={onClick}>
             &#10095;
         </button>
     );
-    
+
     const settings = {
         dots: true,
         infinite: true,
@@ -84,8 +119,8 @@ export default function Portfolio() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        prevArrow: <CustomPrevArrow />, 
-        nextArrow: <CustomNextArrow /> 
+        prevArrow: <CustomPrevArrow />,
+        nextArrow: <CustomNextArrow />
     };
 
     // Projects data
@@ -112,7 +147,6 @@ export default function Portfolio() {
         },
     ];
 
-    // Skills data organized by category with unique skills
     const skills = {
         frontend: [
             { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
@@ -151,16 +185,10 @@ export default function Portfolio() {
                 <div className="container">
                     <div className="navbar-content">
                         <div className="logo">
-                            {/* <a href="#home">JS</a> */}
-                            <img src={profileImg} alt="Logo" className="logo-img" />
+                            <a href="#home">JS</a>
+                            {/* <img src={profileImg} alt="Logo" className="logo-img" /> */}
                         </div>
-                        {/* <div className="logo">
-                            <a href="#home">
-                                <img src="src/assets/profile.jpg" alt="Logo" className="logo-img" />
-                            </a>
-                        </div> */}
-
-
+                     
                         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                             <div className={`hamburger ${menuOpen ? 'active' : ''}`}>
                                 <span></span>
@@ -175,6 +203,7 @@ export default function Portfolio() {
                             <li><a href="#education" className={activeSection === "education" ? "active" : ""} onClick={handleNavClick}>Education</a></li>
                             <li><a href="#skills" className={activeSection === "skills" ? "active" : ""} onClick={handleNavClick}>Skills</a></li>
                             <li><a href="#projects" className={activeSection === "projects" ? "active" : ""} onClick={handleNavClick}>Projects</a></li>
+                            <li><a href="#hobby" className={activeSection === "hobby" ? "active" : ""} onClick={handleNavClick}>Hobby</a></li>
                             <li><a href="#contact" className={activeSection === "contact" ? "active" : ""} onClick={handleNavClick}>Contact</a></li>
                             {/* <li className="resume-button">
                 <a href="/Enhanced_Resume_Jakirul_Sk.pdf" download className="btn-primary" onClick={handleNavClick}>Resume</a>
@@ -229,49 +258,69 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            {/* Projects Section */}
-            <section id="projects" className="section projects-section">
+            {/* About Section */}
+            <section id="about" className="section about-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Featured Projects</h2>
+                        <h2>About Me</h2>
                         <div className="section-divider"></div>
                     </div>
-                    <div className="projects-grid">
-                        {projects.map((project) => (
-                            <div className="project-card" key={project.id}>
-                                <div className="project-image">
-                                    <img src={project.image} alt={project.title} width="200" />
-                                    <div className="project-links">
-                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <i className="fas fa-external-link-alt"></i> Live Demo
-                                        </a>
-                                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <i className="fab fa-github"></i> Source Code
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="project-info">
-                                    <h3>{project.title}</h3>
-                                    <p>{project.description}</p>
-                                    <div className="project-tech">
-                                        {project.techStack.map((tech, index) => (
-                                            <span className="tech-tag" key={index}>{tech}</span>
-                                        ))}
-                                    </div>
-                                </div>
+                    <div className="about-content">
+                        <div className="about-image">
+                            {/* <div className="image-frame">
+                                <img src="/about.jpg" alt="Jakirul Sk" />
+                            </div> */}
+                            <img src={about} alt="Jakirul Sk" />
+                        </div>
+
+                        <div className="about-text">
+                            <h3>Full Stack Developer</h3>
+                            <p>
+                                I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly
+                                web applications. With expertise in the MERN stack, I bring ideas to life through clean code
+                                and thoughtful design.
+                            </p>
+                            <p>
+                                My journey in web development began during my undergraduate studies, where I developed a
+                                strong foundation in computer science principles. Since then, I've honed my skills through
+                                personal projects and professional experiences, focusing on building applications that solve
+                                real-world problems.
+                            </p>
+
+                            <div className="about-cta">
+                                {/* <a href="/Resume_Jakirul_Sk.pdf" download className="btn-primary"> Resume </a> */}
+                                <a href="#contact" className="btn-secondary">Let's Talk</a>
                             </div>
-                        ))}
-                    </div>
-                    <div className="projects-cta">
-                        <a href="https://github.com/Jakirul458" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                            See More Projects <i className="fas fa-arrow-right"></i>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </section>
+            
+            {/* Education Section */}
+            <section id="education" className="section education-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Education & Qualifications</h2>
+                        <div className="section-divider"></div>
+                    </div>
+                    <div className="timeline">
+                        <div className="timeline-item">
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-content">
+                                <div className="timeline-date">2022 - 2025</div>
+                                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                                <h4>kalyani Government Engineering College <br />Under the <br /></h4>
+                                <h4>Maulana Abul Kalam Azad University of Technology</h4>
+                                <p>
+                                    Graduated with honors, focusing on algorithms, data structures, and web development.
+                                    Key courses included Database Management Systems, Object-Oriented Programming, and Software Engineering.
+                                </p>
+                            </div>
+                        </div>
 
-
-
+                    </div>
+                </div>
+            </section>
 
 
             {/* Skills Section */}
@@ -332,108 +381,85 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            {/* Education Section */}
-            <section id="education" className="section education-section">
+            {/* Projects Section */}
+            <section id="projects" className="section projects-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Education & Qualifications</h2>
+                        <h2>Featured Projects</h2>
                         <div className="section-divider"></div>
                     </div>
-                    <div className="timeline">
-                        <div className="timeline-item">
-                            <div className="timeline-dot"></div>
-                            <div className="timeline-content">
-                                <div className="timeline-date">2022 - 2025</div>
-                                <h3>Bachelor of Technology in Computer Science and Engineering</h3>
-                                <h4>kalyani Government Engineering College <br />Under the <br /></h4>
-                                <h4>Maulana Abul Kalam Azad University of Technology</h4>
-                                <p>
-                                    Graduated with honors, focusing on algorithms, data structures, and web development.
-                                    Key courses included Database Management Systems, Object-Oriented Programming, and Software Engineering.
-                                </p>
+                    <div className="projects-grid">
+                        {projects.map((project) => (
+                            <div className="project-card" key={project.id}>
+                                <div className="project-image">
+                                    <img src={project.image} alt={project.title} width="200" />
+                                    <div className="project-links">
+                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="project-link">
+                                            <i className="fas fa-external-link-alt"></i> Live Demo
+                                        </a>
+                                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
+                                            <i className="fab fa-github"></i> Source Code
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="project-info">
+                                    <h3>{project.title}</h3>
+                                    <p>{project.description}</p>
+                                    <div className="project-tech">
+                                        {project.techStack.map((tech, index) => (
+                                            <span className="tech-tag" key={index}>{tech}</span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                       
+                        ))}
                     </div>
-                </div>
-            </section>
-
-            {/* About Section */}
-            <section id="about" className="section about-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>About Me</h2>
-                        <div className="section-divider"></div>
-                    </div>
-                    <div className="about-content">
-                        <div className="about-image">
-                            {/* <div className="image-frame">
-                                <img src="/about.jpg" alt="Jakirul Sk" />
-                            </div> */}
-                            <img src={about} alt="Jakirul Sk" />
-                        </div>
-
-                        <div className="about-text">
-                            <h3>Full Stack Developer</h3>
-                            <p>
-                                I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly
-                                web applications. With expertise in the MERN stack, I bring ideas to life through clean code
-                                and thoughtful design.
-                            </p>
-                            <p>
-                                My journey in web development began during my undergraduate studies, where I developed a
-                                strong foundation in computer science principles. Since then, I've honed my skills through
-                                personal projects and professional experiences, focusing on building applications that solve
-                                real-world problems.
-                            </p>
-
-                            <div className="about-cta">
-                                <a href="/Resume_Jakirul_Sk.pdf" download className="btn-primary"> Resume </a>
-                                <a href="#contact" className="btn-secondary">Let's Talk</a>
-                            </div>
-                        </div>
+                    <div className="projects-cta">
+                        <a href="https://github.com/Jakirul458" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                            See More Projects <i className="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </section>
 
             {/* Hobby Section */}
             <section id="hobby" className="section hobby-section">
-            <div className="container">
-                <div className="section-header">
-                    <h2>My Hobby</h2>
-                    <div className="section-divider"></div>
-                </div>
-
-                <div className="hobby-content">
-                    <div className="hobby-image">
-                        <Slider {...settings}>
-                            {images.map((img, index) => (
-                                <div key={index} className="slider-item">
-                                    <img src={img} alt={`Ride ${index + 1}`} className="slider-image" />
-                                </div>
-                            ))}
-                        </Slider>
+                <div className="container">
+                    <div className="section-header">
+                        <h2>My Hobby</h2>
+                        <div className="section-divider"></div>
                     </div>
 
-                    <div className="hobby-text">
-                        <h3>Bike Riding</h3>
-                        <p>
-                            I love bike riding, exploring breathtaking landscapes, and experiencing the thrill of long journeys.
-                            The open road gives me a sense of freedom and adventure.
-                            Riding through the curves, feeling the rush as the mountains call and our bike answers with every turn!
-                        </p>
-                        <p>
-                            My previous rides include thrilling trips to <b>Jharkhand, Purulia, Sikkim, and Meghalaya</b>, 
-                            each offering unique beauty and unforgettable experiences.
-                        </p>
+                    <div className="hobby-content">
+                        <div className="hobby-image">
+                            <Slider {...settings}>
+                                {images.map((img, index) => (
+                                    <div key={index} className="slider-item">
+                                        <img src={img} alt={`Ride ${index + 1}`} className="slider-image" />
+                                    </div>
+                                ))}
+                            </Slider>
+                        </div>
 
-                        <div className="hobby-cta">
-                            <a href="#contact" className="btn-primary">Let's Ride Together</a>
+                        <div className="hobby-text">
+                            <h3>Bike Riding</h3>
+                            <p>
+                                I love bike riding, exploring breathtaking landscapes, and experiencing the thrill of long journeys.
+                                The open road gives me a sense of freedom and adventure.
+                                Riding through the curves, feeling the rush as the mountains call and our bike answers with every turn!
+                            </p>
+                            <p>
+                                My previous rides include thrilling trips to <b>Jharkhand, Purulia, Sikkim, and Meghalaya</b>,
+                                each offering unique beauty and unforgettable experiences.
+                            </p>
+
+                            <div className="hobby-cta">
+                                <a href="#contact" className="btn-primary">Let's Ride Together</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
             {/* Contact Section */}
             <section id="contact" className="section contact-section">
@@ -444,7 +470,6 @@ export default function Portfolio() {
                     </div>
                     {/* Contact Section */}
                     <div className="contact-content">
-                        {/* Contact Info (Wrapped in a separate container) */}
                         <div className="contact-info">
                             <div className="contact-card">
                                 <div className="contact-icon">
@@ -475,7 +500,6 @@ export default function Portfolio() {
                             </div>
                         </div>
 
-                        {/* Place Connect With Me below the contact cards */}
                         <div className="contact-social">
                             <h3>Connect With Me</h3>
                             <div className="social-icons">
@@ -493,30 +517,28 @@ export default function Portfolio() {
 
                         <div className="contact-form">
                             <h3>Send Me a Message</h3>
-                            <form action="https://api.web3forms.com/submit" method="POST">
+                            <form onSubmit={handleSubmit}>
                                 <input type="hidden" name="access_key" value="e960a4c6-cee5-42d6-95f7-1d7ad29cb908" />
-                                <div className="form-group">
-                                    <input type="text" name="name" placeholder="Your Name" />
-                                </div>
-                                <div className="form-group">
-                                    <input type="email" name="email" placeholder="Your Email" />
-                                </div>
-                                <div className="form-group">
-                                    <input type="text" name="subject" placeholder="Subject" />
-                                </div>
-                                <div className="form-group">
-                                    <textarea name="message" placeholder="Your Message" rows="5"></textarea>
-                                </div>
-                                <div className="form-group">
-                                    <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." />
-                                </div>
-                                <div>
 
+                                <div className="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
                                 </div>
+                                <div className="form-group">
+                                    <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} required />
+                                </div>
+                                <div className="form-group">
+                                    <textarea name="message" placeholder="Your Message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
+                                </div>
+                                <div className="form-group">
+                                    <input type="url" name="drive_link" placeholder="If you want to attach a file, please provide a drive link." value={formData.drive_link} onChange={handleChange} />
+                                </div>
+
                                 <button type="submit" className="btn-primary">Send Message</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -534,20 +556,10 @@ export default function Portfolio() {
                             <a href="#about">About </a>
                             <a href="#skills">Skills </a>
                             <a href="#projects">Projects </a>
+                            <a href="#hobby">Hobby </a>
                             <a href="#contact">Contact </a>
                         </div>
-                        {/* <div className="footer-social">
-                            <a href="https://linkedin.com/in/jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/Jakirul458" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-github"></i>
-                            </a>
-                            <a href="https://leetcode.com/u/Jakirul_Sk/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fas fa-code"></i>
-                            </a>
-                        </div> */}
-                    </div>
+                                           </div>
                     <div className="footer-bottom">
                         <p>&copy; {new Date().getFullYear()} Jakirul Sk. All rights reserved.</p>
                     </div>
