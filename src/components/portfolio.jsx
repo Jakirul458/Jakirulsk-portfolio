@@ -260,42 +260,38 @@ export default function Portfolio() {
 
             {/* About Section */}
             <section id="about" className="section about-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>About Me</h2>
-                        <div className="section-divider"></div>
-                    </div>
-                    <div className="about-content">
-                        <div className="about-image">
-                            {/* <div className="image-frame">
-                                <img src="/about.jpg" alt="Jakirul Sk" />
-                            </div> */}
-                            <img src={about} alt="Jakirul Sk" />
-                        </div>
+    <div className="container">
+        <div className="section-header">
+            <h2>About Me</h2>
+            <div className="section-divider"></div>
+        </div>
+        <div className="about-content">
+            <div className="about-image">
+                <img src={about} alt="Jakirul Sk" />
+            </div>
 
-                        <div className="about-text">
-                            <h3>Full Stack Developer</h3>
-                            <p>
-                                I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly
-                                web applications. With expertise in the MERN stack, I bring ideas to life through clean code
-                                and thoughtful design.
-                            </p>
-                            <p>
-                                My journey in web development began during my undergraduate studies, where I developed a
-                                strong foundation in computer science principles. Since then, I've honed my skills through
-                                personal projects and professional experiences, focusing on building applications that solve
-                                real-world problems.
-                            </p>
+            <div className="about-text">
+                <h3>Full Stack Developer</h3>
+                <p>
+                    I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly
+                    web applications. With expertise in the MERN stack, I bring ideas to life through clean code
+                    and thoughtful design.
+                </p>
+                <p>
+                    My journey in web development began during my undergraduate studies, where I developed a
+                    strong foundation in computer science principles. Since then, I've honed my skills through
+                    personal projects and professional experiences, focusing on building applications that solve
+                    real-world problems.
+                </p>
 
-                            <div className="about-cta">
-                                {/* <a href="/Resume_Jakirul_Sk.pdf" download className="btn-primary"> Resume </a> */}
-                                <a href="#contact" className="btn-secondary">Let's Talk</a>
-                            </div>
-                        </div>
-                    </div>
+                <div className="about-cta">
+                    <a href="#contact" className="btn-secondary">Let's Talk</a>
                 </div>
-            </section>
-            
+            </div>
+        </div>
+    </div>
+</section>
+
             {/* Education Section */}
             <section id="education" className="section education-section">
                 <div className="container">

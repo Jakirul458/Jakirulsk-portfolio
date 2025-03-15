@@ -252,7 +252,7 @@ button, .btn-primary, .btn-secondary {
 .nav-links a {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--gray-700);
+  /* color: var(--gray-700); */
   padding: 0.5rem 0;
   position: relative;
 }
@@ -264,7 +264,7 @@ button, .btn-primary, .btn-secondary {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
   transition: var(--transition-fast);
 }
 
@@ -580,10 +580,13 @@ button, .btn-primary, .btn-secondary {
 }
 
 
-/* About Section */
-.about-section {
+/* About Section */.about-section {
   padding: 80px 20px;
   background-color: #f9f9f9;
+}
+
+.section-header {
+  text-align: center;
 }
 
 .section-divider {
@@ -599,6 +602,7 @@ button, .btn-primary, .btn-secondary {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .about-image {
@@ -609,21 +613,16 @@ button, .btn-primary, .btn-secondary {
 
 .about-image img {
   width: 100%;
-  
+  max-width: 350px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
   flex: 1;
- 
+  text-align: left;
+  max-width: 500px;
 }
-
-/* .about-text h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
-} */
 
 .about-text p {
   font-size: 16px;
@@ -665,6 +664,35 @@ button, .btn-primary, .btn-secondary {
 
 .btn-secondary:hover {
   background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .about-image img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image img {
+    max-width: 90%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
 
 
