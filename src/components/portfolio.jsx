@@ -34,7 +34,7 @@ export default function Portfolio() {
     // Handle scroll event for navbar styling and active section detection
     useEffect(() => {
         const handleScroll = () => {
-          
+
             setIsScrolled(window.scrollY > 50);
 
             // Determine active section based on scroll position
@@ -188,7 +188,7 @@ export default function Portfolio() {
                             <a href="#home">JS</a>
                             {/* <img src={profileImg} alt="Logo" className="logo-img" /> */}
                         </div>
-                     
+
                         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                             <div className={`hamburger ${menuOpen ? 'active' : ''}`}>
                                 <span></span>
@@ -260,37 +260,37 @@ export default function Portfolio() {
 
             {/* About Section */}
             <section id="about" className="section about-section">
-    <div className="container">
-        <div className="section-header">
-            <h2>About Me</h2>
-            <div className="section-divider"></div>
-        </div>
-        <div className="about-content">
-            <div className="about-image">
-                <img src={about} alt="Jakirul Sk" />
-            </div>
+                <div className="container">
+                    <div className="section-header">
+                        <h2>About Me</h2>
+                        <div className="section-divider"></div>
+                    </div>
+                    <div className="about-content">
+                        <div className="about-image">
+                            <img src={about} alt="Jakirul Sk" />
+                        </div>
 
-            <div className="about-text">
-                <h3>Full Stack Developer</h3>
-                <p>
-                    I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly
-                    web applications. With expertise in the MERN stack, I bring ideas to life through clean code
-                    and thoughtful design.
-                </p>
-                <p>
-                    My journey in web development began during my undergraduate studies, where I developed a
-                    strong foundation in computer science principles. Since then, I've honed my skills through
-                    personal projects and professional experiences, focusing on building applications that solve
-                    real-world problems.
-                </p>
+                        <div className="about-text">
+                            <h3>Full Stack Developer</h3>
+                            <p>
+                                I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly
+                                web applications. With expertise in the MERN stack, I bring ideas to life through clean code
+                                and thoughtful design.
+                            </p>
+                            <p>
+                                My journey in web development began during my undergraduate studies, where I developed a
+                                strong foundation in computer science principles. Since then, I've honed my skills through
+                                personal projects and professional experiences, focusing on building applications that solve
+                                real-world problems.
+                            </p>
 
-                <div className="about-cta">
-                    <a href="#contact" className="btn-secondary">Let's Talk</a>
+                            <div className="about-cta">
+                                <a href="#contact" className="btn-secondary">Let's Talk</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
 
             {/* Education Section */}
             <section id="education" className="section education-section">
@@ -555,7 +555,7 @@ export default function Portfolio() {
                             <a href="#hobby">Hobby </a>
                             <a href="#contact">Contact </a>
                         </div>
-                                           </div>
+                    </div>
                     <div className="footer-bottom">
                         <p>&copy; {new Date().getFullYear()} Jakirul Sk. All rights reserved.</p>
                     </div>
