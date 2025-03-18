@@ -30,14 +30,10 @@ export default function Portfolio() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const linkUrl = "https://github.com/Jakirul458";
-
-    // Handle scroll event for navbar styling and active section detection
     useEffect(() => {
         const handleScroll = () => {
 
             setIsScrolled(window.scrollY > 50);
-
-            // Determine active section based on scroll position
             const sections = ["home", "about", "education", "skills", "projects", "hobby", "contact"];
             for (const section of sections.reverse()) {
                 const element = document.getElementById(section);
@@ -47,16 +43,12 @@ export default function Portfolio() {
                 }
             }
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-
     const handleNavClick = () => {
         setMenuOpen(false);
     };
-
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -64,17 +56,12 @@ export default function Portfolio() {
         message: "",
         drive_link: ""
     });
-
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Create a FormData object to send the data to Web3Forms
         const form = new FormData(e.target);
-
         fetch("https://api.web3forms.com/submit", {
             method: "POST",
             body: form,
@@ -93,24 +80,18 @@ export default function Portfolio() {
             });
     };
 
-
-
     const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15];
-
-
 
     const CustomPrevArrow = ({ onClick }) => (
         <button className="custom-prev" onClick={onClick}>
             &#10094;
         </button>
     );
-
     const CustomNextArrow = ({ onClick }) => (
         <button className="custom-next" onClick={onClick}>
             &#10095;
         </button>
     );
-
     const settings = {
         dots: true,
         infinite: true,
@@ -123,7 +104,7 @@ export default function Portfolio() {
         nextArrow: <CustomNextArrow />
     };
 
-    // Projects data
+
     const projects = [
         {
             id: 1,
@@ -174,13 +155,8 @@ export default function Portfolio() {
         ],
     };
 
-
-
-
-
     return (
         <div className="portfolio-container">
-            {/* Navbar */}
             <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                 <div className="container">
                     <div className="navbar-content">
@@ -188,7 +164,6 @@ export default function Portfolio() {
                             <a href="#home">JS</a>
                             {/* <img src={profileImg} alt="Logo" className="logo-img" /> */}
                         </div>
-
                         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                             <div className={`hamburger ${menuOpen ? 'active' : ''}`}>
                                 <span></span>
@@ -196,7 +171,6 @@ export default function Portfolio() {
                                 <span></span>
                             </div>
                         </div>
-
                         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
                             <li><a href="#home" className={activeSection === "home" ? "active" : ""} onClick={handleNavClick}>Home</a></li>
                             <li><a href="#about" className={activeSection === "about" ? "active" : ""} onClick={handleNavClick}>About</a></li>
@@ -212,7 +186,6 @@ export default function Portfolio() {
                     </div>
                 </div>
             </nav>
-
             {/* Hero Section */}
             <section id="home" className="hero-section">
                 <div className="container">
@@ -259,33 +232,37 @@ export default function Portfolio() {
             </section>
 
             {/* About Section */}
-            <section id="about" className="section about-section">
+
+            <section id="about" className="about-section">
                 <div className="container">
                     <div className="section-header">
                         <h2>About Me</h2>
                         <div className="section-divider"></div>
                     </div>
+
                     <div className="about-content">
-                        <div className="about-image">
-                            <img src={about} alt="Jakirul Sk" />
-                        </div>
+                        {/* About Card */}
+                        <div className="about-card">
+                            <div className="about-image">
+                                <img src={about} alt="Jakirul Sk" />
+                            </div>
 
-                        <div className="about-text">
-                            <h3>Full Stack Developer</h3>
-                            <p>
-                                I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly
-                                web applications. With expertise in the MERN stack, I bring ideas to life through clean code
-                                and thoughtful design.
-                            </p>
-                            <p>
-                                My journey in web development began during my undergraduate studies, where I developed a
-                                strong foundation in computer science principles. Since then, I've honed my skills through
-                                personal projects and professional experiences, focusing on building applications that solve
-                                real-world problems.
-                            </p>
+                            <div className="about-text">
+                                <h3>Full Stack Developer</h3>
+                                <p>
+                                    I'm a Full Stack Developer with a passion for creating efficient, scalable, and user-friendly web applications.
+                                    With expertise in the MERN stack, I bring ideas to life through clean code and thoughtful design.
+                                </p>
+                                <p>
+                                    My journey in web development began during my undergraduate studies, where I developed a strong foundation in computer science principles.
+                                    Since then, I've honed my skills through personal projects and professional experiences, focusing on building applications that solve real-world problems.
+                                </p>
 
-                            <div className="about-cta">
-                                <a href="#contact" className="btn-secondary">Let's Talk</a>
+                                <div className="about-cta">
+                                    <a href="#contact" className="btn-secondary">
+                                        Let's Talk
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -301,7 +278,7 @@ export default function Portfolio() {
                     </div>
                     <div className="timeline">
                         <div className="timeline-item">
-                            <div className="timeline-dot"></div>
+
                             <div className="timeline-content">
                                 <div className="timeline-date">2022 - 2025</div>
                                 <h3>Bachelor of Technology in Computer Science and Engineering</h3>
@@ -312,12 +289,12 @@ export default function Portfolio() {
                                     Key courses included Database Management Systems, Object-Oriented Programming, and Software Engineering.
                                 </p>
                             </div>
+
                         </div>
 
                     </div>
                 </div>
             </section>
-
 
             {/* Skills Section */}
             <section id="skills" className="section skills-section">
@@ -445,7 +422,7 @@ export default function Portfolio() {
                                 Riding through the curves, feeling the rush as the mountains call and our bike answers with every turn!
                             </p>
                             <p>
-                                My previous rides include thrilling trips to <b>Jharkhand, Purulia, Sikkim, and Meghalaya</b>,
+                                My previous rides include thrilling trips to Jharkhand, Purulia, Sikkim, and Meghalaya
                                 each offering unique beauty and unforgettable experiences.
                             </p>
 
@@ -463,8 +440,7 @@ export default function Portfolio() {
                     <div className="section-header">
                         <h2>Get In Touch</h2>
                         <div className="section-divider"></div>
-                    </div>
-                    {/* Contact Section */}
+                    </div>                   
                     <div className="contact-content">
                         <div className="contact-info">
                             <div className="contact-card">
@@ -497,7 +473,7 @@ export default function Portfolio() {
                         </div>
 
                         <div className="contact-social">
-                            <h3>Connect With Me</h3>
+                            <h4>Connect With Me</h4>
                             <div className="social-icons">
                                 <a href="https://linkedin.com/in/jakirul458" target="_blank">
                                     <i className="fab fa-linkedin"></i>
@@ -512,7 +488,7 @@ export default function Portfolio() {
                         </div>
 
                         <div className="contact-form">
-                            <h3>Send Me a Message</h3>
+                            <h3>Drop me a message</h3>
                             <form onSubmit={handleSubmit}>
                                 <input type="hidden" name="access_key" value="e960a4c6-cee5-42d6-95f7-1d7ad29cb908" />
 
@@ -560,9 +536,7 @@ export default function Portfolio() {
                         <p>&copy; {new Date().getFullYear()} Jakirul Sk. All rights reserved.</p>
                     </div>
                 </div>
-            </footer>
-
-            {/* Scroll to top button */}
+            </footer>          
             <a href="#home" className="scroll-top">
                 <i className="fas fa-chevron-up"></i>
             </a>
