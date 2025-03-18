@@ -132,7 +132,7 @@ export default function Portfolio() {
                 "Full stack application for managing user transactions. Built with MERN stack, featuring user authentication, role-based access control, transaction tracking, and responsive dashboard.",
             image: gfst,
             techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "JavaScript",],
-            demoLink: "https://gfst.vercel.app/login",
+            demoLink: "https://gfst-frontend.vercel.app/login",
             githubLink: "https://github.com/Jakirul458/gfst-frontend",
         },
         {
